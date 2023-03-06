@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    
+    <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <link rel="icon" href="/images/logo2.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+
+  </head>
+  <body>
+    <header>
+      <a href="/"><img src="/images/logo2.png" id="logo-img"></a>
+      
+      {{#if loggedIn}}
+        <a href="/logout" id="logout-btn" title="Logout"><i class="fa fa-sign-out"></i></a>
+      {{/if}}
+
+      {{#unless loggedIn}}
+        <a href="/login" id="login-btn" title="Login"><i class="fa fa-sign-in"></i></a>
+      {{/unless}}
+      
+      <img src="/images/movies.png" id="movies-img">
+      <h1>Movies App</h1>
+      <h4><i>Great Movies Start With Us!</i></h4>
+    </header>
+    <main>
+      {{{body}}}
+    </main>
+    <footer>
+      <p>  &copy; 2022 Copyright:<br>
+      Rahul Tiwari - <a href="mailto:rahulbt2016@gmail.com">rahulbt2016@gmail.com</a><br>
+      Sweta Rani Patra - <a href="mailto:swetarani.patra@gmail.com">swetarani.patra@gmail.com</a></p>
+      
+    </footer>
+  </body>
+</html>

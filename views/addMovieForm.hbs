@@ -1,0 +1,243 @@
+<h1>
+    <center>Add Movie Form</center>
+</h1>
+
+<form>
+
+    <div class="form-group">
+        <label for="title">Movie Title:</label>
+        <input type="text" class="form-control" name="title" placeholder="Enter movie title">
+        <br>
+        <label for="plot">Movie Plot:</label>
+        <input type="text" class="form-control" name="plot" placeholder="Enter movie plot">
+        <br>
+        <label for="fullplot">Movie Fullplot:</label>
+        <textarea type="text" class="form-control" name="fullplot" placeholder="Enter movie fullplot"></textarea>
+        <br>
+        <label for="poster">Movie Poster:</label>
+        <input type="text" class="form-control" name="poster" placeholder="Enter movie poster">
+        <br>
+        <label for="genres">Genres:</label>
+        <select id="choices-multiple-remove-button" name="genres" placeholder="Select genres" multiple>
+            <script>
+                genresList = ["Action", "Adventure", "Animation", "Biography", "Comedy", "Crime", 
+                "Documentary" ,"Drama","Family","Fantasy", "Film-Noir",  "History", "Horror", "Music", "Musical", "Mystery", "Romance",
+                "Sci-Fi", "Short", "Sport", "Thriller", "War", "Western" ];
+                
+                for(let i = 0; i < genresList.length; i++) {
+					
+					document.write("<option value='" + genresList[i] + "'>" + genresList[i] + "</option>");    
+                }
+            </script>
+        </select>
+
+        <label for="runtime">Movie Runtime:</label>
+        <input type="number" class="form-control" name="runtime" placeholder="Enter movie runtime">
+        <br>
+        <label for="rated">Movie Rated:</label>
+        <input type="text" class="form-control" name="rated" placeholder="Enter movie rated">
+        <br>
+        <label for="cast">Movie Cast:</label>
+        <input type="text" class="form-control" name="cast" placeholder="Enter movie cast">
+        <br>
+        <label for="mflix_commemts">Movie mflix comments:</label>
+        <input type="number" class="form-control" name="num_mflix_comments" placeholder="Enter movie mflix comments">
+        <br>
+        <label for="metacritic">Movie metacritic:</label>
+        <input type="number" class="form-control" name="metacritic" placeholder="Enter movie metacritic">
+        <br>
+        <label for="countries">Countries:</label>
+        <select id="choices-multiple-remove-button" name="countries" placeholder="Select countries" multiple>
+            <script>
+                countriesList = ['Afghanistan', 'Akrotiri', 'Albania', 'Algeria', 'American Samoa', 
+                                'Andorra', 'Angola', 'Anguilla', 'Antarctica', 'Antigua and Barbuda', 
+                                'Argentina', 'Armenia', 'Aruba', 'Ashmore and Cartier Islands', 'Australia', 
+                                'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 
+                                'Bassas de India', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 
+                                'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswanna', 'Bouvet Island', 
+                                'Brazil', 'British Indian Ocean Territory', 'British Virgin Islands', 
+                                'Brunei', 'Bulgaria', 'Burkina Faso', 'Burma', 'Burundi', 'Cambodia', 
+                                'Cameroon', 'Canada', 'Cape Verde', 'Cayman Islands', 
+                                'Central African Republic', 'Chad', 'Chile', 'China', 'Christmas Island', 
+                                'Clipperton Island', 'Cocoas (Keeling) Islands', 
+                                'Colombia', 'Comoros', 'Congo (Democratic Republic)', 'Congo (Republic)', 
+                                'Cook Islands', 'Coral Sea Islands', 'Costa Rica', 'Cote d\'lvoire', 'Croatia', 
+                                'Cuba', 'Cyprus', 'Czechoslovakia', 'Czech Republic', 'Denmark', 'Dhekelia', 
+                                'Djibouti', 'Dominica', 'Dominican Republic', 'East Germany', 'Ecuador', 
+                                'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 
+                                'Estonia', 'Ethiopia', 'Europa Island', 'Falkland Islands (Islas Malvinas)', 
+                                'Faroe Islands', 'Federal Republic of Yugoslavia', 'Fiji', 'Finland', 'France', 'French Guinea', 'French Polynesia', 'French Southern and Antarctic Lands', 
+                                'Gabon', 'Gambia', 'Gaza Strip', 'Georgia', 'Germany', 'Ghana', 'Gibraltar', 'Glorioso Islands', 'Greece', 
+                                'Greenland', 'Grenada', 'Guadeloupe', 'Guam', 'Guatemala', 'Guernsey', 'Guinea', 'Guinea-Bissau', 'Guyana', 
+                                'Haiti', 'Heard Island and McDonald Islands', 'Holy See (Vatican City)', 'Honduras', 'Hong Kong', 'Hungary', 
+                                'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Isle of Man', 'Israel', 'Italy', 'Jamaica', 
+                                'Jan Mayen', 'Japan', 'Jersey', 'Jordan', 'Juan de Nova Island', 'Kazakhstan', 'Kenya', 'Kiribati',  
+                                'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 
+                                'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macau', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 
+                                'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Martinique', 'Mauritania', 'Mauritius', 'Mayotte', 'Mexico', 
+                                'Micronesia (Federated States)', 'Moldova', 'Monaco', 'Mongolia', 'Montserrat', 'Morocco', 'Mozambique', 'Namibia', 
+                                'Nauru', 'Navassa Island', 'Nepal', 'Netherlands', 'Netherlands Antilles', 'New Caledonia', 'New Zealand', 'Nicaragua', 
+                                'Niger', 'Nigeria', 'Niue', 'Norfolk Island', 'North Korea', 'Northern Mariana Islands', 'Norway', 'Oman', 'Pakistan', 'Palau', 'Palestine', 'Panama', 
+                                'Papua New Guinea', 'Paracel Islands', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn Islands', 'Poland', 'Portugal', 'Puerto Rico', 
+                                'Qatar', 'Republic of Macedonia', 'Reunion', 'Romania', 'Russia', 'Rwanda', 'Saint Helena', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Pierre and Miquelon', 
+                                'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Serbia and Montenegro',
+                                'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 
+                                'South Georgia and the South Sandwich Islands', 'South Korea', 'Soviet Union', 'Spain', 'Spratly Islands', 'Sri Lanka', 'Sudan', 'Suriname', 'Svalbard', 'Swaziland', 
+                                'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Timor-Leste', 'Togo', 'Tokelau', 'Tonga', 'Trinidad and Tobago', 
+                                'Tromelin Island', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks and Caicos Islands', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'UK', 
+                                'USA', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Venezuela', 'Vietnam', 'Virgin Islands', 'Wake Island', 'Wallis and Futuna', 'West Bank', 'West Germany', 'Western Sahara', 
+                                'Yemen', 'Yugoslavia', 'Zambia', 'Zimbabwe'];
+
+                for(let i = 0; i < countriesList.length; i++) {
+					
+					document.write("<option value='" + countriesList[i] + "'>" + countriesList[i] + "</option>");
+                }
+            </script>
+        </select>
+
+        <label for="languanges">Languages:</label>
+        <select id="choices-multiple-remove-button" name="languages" placeholder="Select languages" multiple>
+            <script>
+                languangesList = ["Abkhazian", "Afar", "Afrikaans", "Akan", "Albanian", "Amharic", "Arabic", 
+								"Aragonese", "Armenian", "Assamese", "Avaric", "Avestan", "Aymara", 
+								"Azerbaijani", "Bambara", "Bashkir", "Basque","Belarusian","Bengali", 
+								"Bihari languages", "Bislama", "Bosnian", "Breton", "Bulgarian", "Burmese", 
+								"Cantonese", "Catalan", "Catalan, Valencian", "Central Khmer", "Chamorro", 
+								"Chechen", "Chichewa, Chewa, Nyanja", "Chinese", "Church Slavonic, Old Bulgarian, Old Church Slavonic", 
+								"Chuvash", "Cornish", "Corsican", "Cree", "Croatian","Czech", "Danish", "Dari",
+								"Divehi, Dhivehi, Maldivian", "Dutch", "Dutch, Flemish", "Dzongkha", "English", 
+								"Esperanto", "Estonian", "Ewe", "Faroese", "Fijian", "Finnish", "French", 
+								"Flemish", "Frisian", "Fulah", "Gaelic, Scottish Gaelic", "Galician", 
+								"Ganda", "Georgian", "German", "Gikuyu, Kikuyu", "Kirghiz", "Gallegan", 
+								"Greek", "Greenlandic, Kalaallisut", "Guarani", "Gujarati", "Haitian, Haitian Creole", 
+								"Hausa", "Hebrew", "Herero", "Hindi", "Hiri Motu", "Hungarian", "Icelandic", "Ido", "Igbo", 
+								"Indonesian", "Interlingua (International Auxiliary Language Association)", 
+								"Interlingue", "Inuktitut", "Inupiaq", "Irish", "Italian", "Japanese", 
+								"Javanese", "Kannada", "Kanuri", "Kashmiri", "Kazakh", "Kinyarwanda", "Komi", 
+								"Kongo", "Korean", "Kwanyama, Kuanyama", "Kurdish", "Kyrgyz", "Lao", "Latin", "Latvian", 
+								"Letzeburgesch, Luxembourgish", "Limburgish, Limburgan, Limburger", 
+								"Lingala", "Lithuanian", "Luba-Katanga", "Macedonian", "Malagasy", 
+								"Malay", "Malayalam", "Maltese", "Manx", "Maori", "Marathi", "Marshallese", 
+								"Moldovan, Moldavian, Romanian", "Mandarin", "Mongolian", "Maya", "More" , "Nauru", 
+								"Navajo, Navaho", "Northern Ndebele", "Ndonga", "Nepali", "Northern Sami", "Norwegian", 
+								"Norwegian Bokmål", "Norwegian Nynorsk", "Nuosu, Sichuan Yi","Nyaneka", 
+								"Occitan (post 1500)", "Ojibwa", "Oriya", "Oromo", "Ossetian, Ossetic", "Pali", 
+								"Panjabi", "Pashto, Pushto", "Persian", "Polish", "Portuguese", "Punjabi", 
+								"Pushto", "Quechua", "Romansh", "Romanian", "Rundi", "Russian", "Saami", 
+								"Samoan", "Sango", "Sanskrit", "Sardinian", "Serbian", "Serbo-Croatian", 
+								"Shona","Sign Languages", "Sindhi", "Sinhala, Sinhalese", "Sinhalese", 
+								"Slovak", "Slovenian", "Somali", "South Ndebele", "Southern Sotho", 
+								"Spanish","Spanish, Castilian", "Sundanese", "Swahili", "Swati", 
+								"Swedish", "Swiss German", "Tagalog", "Tahitian", "Tajik", "Tamil", 
+								"Tarahumara", "Tatar", "Telugu", "Thai", "Tibetan", "Tigrinya", 
+								"Tonga (Tonga Islands)", "Tsonga", "Tswana", "Turkish", "Turkmen", 
+								"Twi", "Uighur, Uyghur", "Ukrainian", "Urdu", "Uzbek", "Venda", "Vietnamese", 
+								"Volap_k", "Walloon", "Welsh", "Western Frisian", "Wolof", "Xhosa", "Yiddish", 
+								"Yoruba", "Zhuang, Chuang", "Zulu"];
+												
+				for(let i = 0; i < languangesList.length; i++) {
+				
+					document.write("<option value='" + languangesList[i] + "'>" + languangesList[i] + "</option>");
+				}
+            </script>
+        </select>
+        <label for="type">Movie Released date:</label>
+        <input type="date" id="date" class="form-control" name="released" >
+        <br>
+        <label for="type">Movie Directors:</label>
+        <input type="text" class="form-control" name="directors" placeholder="Enter movie directors">
+        <br>
+        <label for="type">Movie Writers:</label>
+        <input type="text" class="form-control" name="writers" placeholder="Enter movie writers">
+        <br>
+       <label for="type">Movie Awards</label>
+            <div class="awards">
+
+                <label for="type">Movie Wins:</label>
+                <input type="number" class="form-control" name="awards_wins" placeholder="Enter movie wins">
+                <label for="type">Movie Nominations:</label>
+                <input type="number" class="form-control" name="awards_nominations" placeholder="Enter movie nominations">
+                <label for="type">Movie Text:</label>
+                <input type="text" class="form-control" name="awards_text" placeholder="Enter movie text">
+            </div>
+        </div>
+        <br>
+
+        <label for="type">Movie last updated date:</label>
+        <input type="date" id="date1" class="form-control" name="lastUpdated">
+        <br>
+        <label for="type">Movie year</label>
+        <input type="number" class="form-control" name="year" placeholder="Enter movie year">
+        <br>
+
+        <label for="type">Movie Imdb</label>
+        <div class="imdb">
+            <label for="type">Movie imdb rating:</label>
+            <input type="number" class="form-control" name="imdb_rating" placeholder="Enter movie imdb rating">
+            <label for="type">Movie votes:</label>
+            <input type="number" class="form-control" name="imdb_votes" placeholder="Enter movie votes">
+            <label for="type">Movie id:</label>
+            <input type="number" class="form-control" name="imdb_id" placeholder="Enter movie id">
+        </div>
+        <br>
+
+        <label for="type">Movie Type:</label>
+        <input type="text" class="form-control" name="type" placeholder="Enter movie type">
+        <br>
+        <label for="type">Movie tomatoes</label>
+
+        <div class="tomatoes">
+            <br>
+            <label for="type">Movie tomatoes last updated date:</label>
+            <input type="date" id="date2" class="form-control" name="tomatoes_lastUpdated" placeholder="Enter movie tomatoes last updated date">
+            
+            <br>
+            
+                <label for="type">Movie viewer</label><br>
+                <label for="type">Movie rating:</label>
+                <input type="number" class="form-control" name="tomatoes_viewer_rating" placeholder="Enter movie rating">
+                <label for="type">Movie numReviews:</label>
+                <input type="number" class="form-control" name="tomatoes_viewer_numReviews" placeholder="Enter movie numReviews">
+                <label for="type">Movie meter:</label>
+                <input type="number" class="form-control" name="tomatoes_viewer_meter" placeholder="Enter movie meter">
+           
+<br>
+            <label for="type">Movie critic</label><br>
+           
+                <label for="type">Movie rating:</label>
+                <input type="number" class="form-control" name="tomatoes_critic_rating" placeholder="Enter movie rating">
+                <label for="type">Movie numReviews:</label>
+                <input type="number" class="form-control" name="tomatoes_critic_numReviews" placeholder="Enter movie numReviews">
+                <label for="type">Movie meter:</label>
+                <input type="number" class="form-control" name="tomatoes_critic_meter" placeholder="Enter movie meter">
+            
+<br>
+            
+            <label for="type">Movie tomatoes dvd:</label>
+            <input type="date" id="date3" class="form-control" name="tomatoes_dvd" placeholder="Enter movie dvd">
+            <br>
+            <label for="type">Movie boxOffice:</label>
+            <input type="text" class="form-control" name="tomatoes_boxOffice" placeholder="Enter movie boxOffice">
+            <br>
+            <label for="type">Movie website:</label>
+            <input type="text" class="form-control" name="tomatoes_website" placeholder="Enter movie website">
+            <br>
+            <label for="type">Movie consensus:</label>
+            <input type="text" class="form-control" name="tomatoes_consensus" placeholder="Enter movie consensus">
+            <br>
+            <label for="type">Movie rotten:</label>
+            <input type="number" class="form-control" name="tomatoes_rotten" placeholder="Enter movie rotten">
+            <br>
+            <label for="type">Movie production:</label>
+            <input type="text" class="form-control" name="tomatoes_production" placeholder="Enter movie production">
+            <br>
+            <label for="type">Movie fresh:</label>
+            <input type="number" class="form-control" name="tomatoes_fresh" placeholder="Enter movie fresh">
+            <br>
+        </div>
+    </div>
+    
+
+    <br>
+    <input type="button" class="btn btn-primary" id="add-movie-form-btn" value="Add Movie">
+</form>

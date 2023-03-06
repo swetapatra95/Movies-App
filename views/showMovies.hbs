@@ -1,0 +1,174 @@
+{{#if loggedIn}}
+    <h3 class="hello-msg">Hello {{loggedIn.name}}!</h3>
+{{/if}}
+
+<div class="container">
+    <form class="search-form">
+        <div class="row">
+            <div class="col-md-3">
+                
+                <div class="form-group has-feedback">
+
+                    <script>
+
+                        let urlString = window.location.href;
+                        let url = new URL(urlString);
+                        let searchParams = url.searchParams;
+
+                        let title = searchParams.get('title');
+                        if(!title)
+                            title="";
+
+                        document.write("<input type='text' class='form-control' id='title' name='title' placeholder='Search movie title' value='" + title + "'>");
+                    </script>
+                    
+                </div>
+            </div>
+            <div class="col-md-1" id="search-movie-btn">
+                <button type="button" class="btn btn-primary" id="title-search-btn">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+            <div class="col-md-1">
+                
+            </div>
+
+            <div class="col-md-2">
+                <label for="perPageSelect" style="float:right">Number of records:</label>
+            </div>
+            
+            <div class="col-md-1">
+                <select class="form-select" id="perPageSelect">
+                    <script>
+                        
+                        let perPage = searchParams.get('perPage');
+
+                        if(perPage == 10)
+                            document.write("<option value='10' selected>10</option>");
+                        else
+                            document.write("<option value='10'>10</option>");
+
+                        if(perPage == 25)
+                            document.write("<option value='25' selected>25</option>");
+                        else
+                            document.write("<option value='25'>25</option>");
+
+                        if(perPage == 50)
+                            document.write("<option value='50' selected>50</option>");
+                        else
+                            document.write("<option value='50'>50</option>");
+
+                        if(perPage == 100)
+                            document.write("<option value='100' selected>100</option>");
+                        else
+                            document.write("<option value='100'>100</option>");
+
+                    </script>
+                </select>
+            </div>
+
+            <div class="col-md-1">
+                <label for="page" style="float:right">Page:</label>
+            </div>
+
+            <div class="col-md-2">
+                <select class="form-select" id="pageSelect">
+                    <script>
+
+                        let page = searchParams.get('page');
+                        if(!page)
+                            page = 0;
+
+                        for(let i = 0; i <= "{{totalPages}}"; i++) {
+                            if(i == page){
+                                document.write("<option value='" + i + "' selected>" + (i+1) + "</option>");
+                            }
+                            else {
+                                document.write("<option value='" + i + "'>" + (i+1) + "</option>");
+                            }
+                        }
+                    </script>
+                </select>
+            </div>
+
+            <div class="col-md-1">
+                
+                <button type="button" class="btn btn-primary" id="add-movie-btn">
+                    <i class="fa fa-plus"> Add Movie</i>
+                </button>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+<div class="container py-2">
+
+    {{#each data}}
+            <article class="postcard light blue">
+                <a class="postcard__img_link" href="/movieDetails/{{this._id}}">
+                    {{#if this.poster }}
+                        <img class="postcard__img" src={{ this.poster }}  style="width: 240px; height: 350px"/>
+                    {{/if}}
+
+                    {{#unless this.poster }}
+                        <img class="postcard__img" src="/images/default_poster.jpg"  style="width: 240px; height: 350px"/>
+                    {{/unless}}
+                    
+                </a>
+                <div class="postcard__text t-dark">
+                    <h1 class="postcard__title blue"><a href="/movieDetails/{{this._id}}">{{ this.title }}</a></h1>
+                    <div class="postcard__subtitle small">
+                        <time datetime="2020-05-25 12:00:00">
+                            <i class="fa fa-calendar"></i>
+                            <script>
+                                releaseDate = "{{ this.released }}";
+
+                                releaseDate = new Date(releaseDate)
+                                document.write(releaseDate.toDateString());
+                            </script>
+                            
+                            &emsp;
+
+                            <span><i class="fa fa-clock-o"></i> {{this.runtime}} mins.</span>
+
+                            &emsp;
+
+                            <span><i class="fa fa-star"></i> IMDB: {{this.imdb.rating}}/10</span>
+
+                            <br><br>
+
+                            {{#each this.genres}}
+                                <span class="badge">{{this}}</span>
+                            {{/each}}
+
+                        </time>
+                    </div>
+                    <div class="postcard__bar"></div>
+                    <div class="postcard__preview-txt">{{this.fullplot}}</div>
+                    <ul class="postcard__tagbox action-btns">
+                        
+                        <li class="tag__item play blue">
+                            <a class="update-movie-btn"><p hidden>{{this._id}}</p><i class="fa fa-pencil"></i><span> Update</span></a>
+                        </li>
+
+                        <li class="tag__item play red">
+                            <a class="delete-movie-btn"><p hidden>{{this._id}}</p><i class="fa fa-trash"></i><span> Delete</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+    {{/each}}
+</div>
+
+<script>
+    let loggedInUser = "{{loggedIn}}";
+    
+    if(!loggedInUser) {
+        $("#add-movie-btn").hide();
+        $(".action-btns").html("");
+    }
+</script>
+
+
+

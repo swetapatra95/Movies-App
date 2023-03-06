@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Movies App - User Login</title>
+    
+    <link rel="icon" href="/images/logo2.png">
+    <link rel='stylesheet' href='/stylesheets/login.css' />
+
+
+  </head>
+<body>
+  
+</body>
+</html>
+
+<div class="loginContainer">
+  <form class="box" action="/loginUser" method="post">
+    <img src="/images/logo3.png" id="logo">
+
+    <input type="text" name="email" placeholder="Email">
+    <input type="password" name="password" placeholder="Password">
+    <input type="submit" value="Login" placeholder="Login">
+  </form>
+  <div class="lines login">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+</div>
+
+<script>
+  if("{{loggedIn}}")
+    window.location.replace("/");
+</script>

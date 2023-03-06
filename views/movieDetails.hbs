@@ -1,0 +1,209 @@
+<div class="wrapper">
+    <div class="main_card">
+        <div class="card_left">
+            <div class="card_datails">
+                <h1>{{data.title}}</h1>
+                <div class="card_cat">
+
+                    <span class="time"><i class="fa fa-clock-o">&nbsp</i> {{data.runtime}} mins</span>
+                    <span class="year"> <i class="fa fa-calendar">&nbsp</i>
+                         <script>
+                                releaseDate = "{{ data.released }}";
+
+                                releaseDate = new Date(releaseDate)
+                                document.write(releaseDate.toDateString());
+                            </script>
+                    </span>
+                    <span class="rated">{{data.rated}}</span>
+                </div>
+                <span class="genre"> 
+                    {{#each data.genres}} 
+                       <span class="badge1 badge"> {{this}} </span> &nbsp; &nbsp;
+                    {{/each}}
+                </span>
+                <hr>
+
+                <div class="social-btn">
+                    <i class="fa fa-imdb"></i>&nbsp<b>IMDB</b><br><br>
+                    <span class="id"> ID: {{data.imdb.id}}</span>
+                    <span class="rating"> <i class="fa fa-star"></i>&nbsp : {{data.imdb.rating}}/10</span>
+                    <span class="votes">Votes: {{data.imdb.votes}}</span>
+                </div>
+
+                 <div class="social-btn">
+                   <img src="/images/Tomatoes.png" id="tomatoes-img"></a></i></i>&nbsp<b>Rotten Tomatoes</b><br><br>
+                   
+                    {{#if data.tomatoes.viewer}}
+                        <span class="viewer">Viewer</span> <br><br>
+                        <span class="rating"> <i class="fa fa-star"></i>&nbsp : {{data.tomatoes.viewer.rating}}/10</span>
+                        <span class="reviews"> Reviewed By: {{data.tomatoes.viewer.numReviews}}</span>
+                        <span class="meter">Meter: {{data.tomatoes.viewer.meter}}</span><br><br>
+                    {{/if}}
+
+                    {{#if data.tomatoess.critic}}
+                        <span class="critic">Critic</span><br><br>   
+                        <span class="rating"> <i class="fa fa-star"></i>&nbsp : {{data.tomatoes.critic.rating}}/10</span>
+                        <span class="reviews"> Reviewed By: {{data.tomatoes.critic.numReviews}}</span>
+                        <span class="meter">Meter: {{data.tomatoes.critic.meter}}</span><br><br>
+                    {{/if}}
+                    {{#if data.tomatoes.boxOffice}}
+                        <span class="boxOffice">Box Office: {{data.tomatoes.boxOffice}}</span><br><br>
+                    {{/if}}
+                    {{#if data.tomatoes.production}}
+                        <span class="production">Production: {{data.tomatoes.production}}</span><br><br>
+                    {{/if}}
+                    {{#if data.tomatoes.rotten}}
+                        <span class="rotten">Tomatoes rotten: {{data.tomatoes.rotten}}</span><br><br>
+                    {{/if}}
+                    {{#if data.tomatoes.fresh}}
+                        <span class="fresh">Tomatoes fresh: {{data.tomatoes.fresh}}</span><br><br>
+                    {{/if}}
+                    {{#if data.tomatoes.website}}
+                      <span class="website">Website: {{data.tomatoes.website}}</span><br><br>
+                    {{/if}}
+                    {{#if data.dvd}}
+                    <span class="dvd"> DVD:
+                        
+                        {{#if data.tomatoes.dvd }}
+                            <script>
+
+                                releaseDate = "{{ data.tomatoes.dvd }}";
+
+                                releaseDate = new Date(releaseDate)
+                                document.write(releaseDate.toDateString());
+                            
+                                
+                            </script>
+                        {{/if}}
+
+                        {{#unless data.tomatoes.dvd }}
+                        NA
+                        {{/unless}}
+                        
+                    </span>
+                    {{/if}}
+                </div>
+                {{#if data.fullplot}}
+                <hr>
+                <br>
+                 <div class="social-btn">
+                <p class="disc"><b>{{data.fullplot}}</b></p>
+                </div>
+                {{/if}}
+                <hr>
+                <div class="social-btn">
+                    
+                    <table>
+                        {{#if data.directors}}
+                        <tr>
+                            <th>DIRECTORS:</th>
+                            <td>
+                                <b>
+                                    <script>
+                                        let directors = [];
+                                        {{#each data.directors}}
+                                            directors.push("{{this}}")
+                                        {{/each}}
+                                        
+                                        directors = directors.join(" | ");
+
+                                        document.write(directors);
+                                    </script>
+                                </b>
+                                
+                            </td>
+                        </tr>
+                        {{/if}}
+                        {{#if data.cast}}
+                        <tr>
+                            <th>CAST:</th>
+                            <td>
+                                <b>
+                                    <script>
+                                        let cast = [];
+                                        {{#each data.cast}}
+                                            cast.push("{{this}}")
+                                        {{/each}}
+                                        
+                                        cast = cast.join(" | ");
+
+                                        document.write(cast);
+                                    </script>
+                                </b>
+                                
+                            </td>
+                        </tr>
+                        {{/if}}
+                        {{#if data.languages}}
+                        <tr>
+                            <th>LANGUAGES:</th>
+                            <td>
+                                <b>
+                                    <script>
+                                        let languages = [];
+                                        {{#each data.languages}}
+                                            languages.push("{{this}}")
+                                        {{/each}}
+                                        
+                                        languages = languages.join(" | ");
+
+                                        document.write(languages);
+                                    </script>
+                                </b>
+                                
+                            </td>
+                        </tr>
+                       {{/if}}
+                       {{#if data.countries}}
+                        <tr>
+                            <th>COUNTRIES:</th>
+                            <td>
+                                <b>
+                                    <script>
+                                        let countries = [];
+                                        {{#each data.countries}}
+                                            countries.push("{{this}}")
+                                        {{/each}}
+                                        
+                                        countries = countries.join(" | ");
+
+                                        document.write(countries);
+                                    </script>
+                                </b>
+                                
+                            </td>
+                        </tr>
+                        {{/if}}
+                    </table>
+
+                </div>
+                {{#if data.awards}}
+                <hr>
+                <div class="social-btn">
+                    <i class="fa fa-trophy"></i>&nbsp<b>AWARDS</b><br>
+                    <br>
+                    <b>WINS: {{data.awards.wins}} </b>&nbsp <br>
+                    <b>NOMINATION: {{data.awards.nominations}}</b>&nbsp
+                </div>
+                {{/if}}
+               
+
+            </div>
+        </div>
+
+        <div class="card_right">
+            <div class="img_container">
+
+                {{#if data.poster }}
+                    <img src="{{data.poster}}" alt="">
+                {{/if}}
+
+                {{#unless data.poster }}
+                    <img src="/images/default_poster.jpg" alt="">
+                {{/unless}}
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
